@@ -3,7 +3,7 @@ version: '3'
 services:
   chrome:
     image: selenium/node-chrome:latest
-    shm_size: 2gb
+    shm_size: '2gb'
     depends_on:
       - selenium-hub
     environment:
@@ -22,7 +22,7 @@ services:
       - "4443:4443"
       - "4444:4444"
   selenium-side-runner:
-    image: flo0id/zarovizsga-selenium
+    image: flo0id/zarovizsga-selenium:latest
     depends_on:
       - chrome
     build:
