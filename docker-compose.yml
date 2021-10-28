@@ -2,7 +2,7 @@ version: '3'
 
 services:
   chrome:
-    image: selenium/node-chrome:4.0.0-20211025
+    image: selenium/node-chrome:latest
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -15,7 +15,7 @@ services:
       - "6900:5900"
 
   selenium-hub:
-    image: selenium/hub:4.0.0-20211025
+    image: selenium/hub:latest
     container_name: selenium-hub
     ports:
       - "4442:4442"
@@ -23,6 +23,8 @@ services:
       - "4444:4444"
   selenium-side-runner:
     image: flo0id/zarovizsga-selenium
+    depends_on:
+      - chrome
     build:
       context: .
     volumes:
