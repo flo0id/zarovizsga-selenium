@@ -23,8 +23,8 @@ services:
       - "4444:4444"
   selenium-side-runner:
     image: flo0id/zarovizsga-selenium
-    # build:
-    #   context: .
+    build:
+      context: .
     volumes:
       - './sides:/sides'
       - './out:/root/out'
